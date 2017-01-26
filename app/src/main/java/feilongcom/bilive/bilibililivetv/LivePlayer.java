@@ -56,8 +56,8 @@ public class LivePlayer extends AppCompatActivity {
             public void onClick(View v) {
                 if (idInput.getText().length() != 0) {
                     String roomId = getRoomId(idInput.getText().toString());
-                    //String playurl = getPlayUrls(roomId);
-                    String playurl = getMp4PlayUrls(roomId);
+                    String playurl = getPlayUrls(roomId);
+                    //String playurl = getMp4PlayUrls(roomId);
 
                     /***********************************************************/
                     /*cdn*/
