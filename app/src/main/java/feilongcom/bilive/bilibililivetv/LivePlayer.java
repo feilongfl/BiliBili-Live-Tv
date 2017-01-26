@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -54,18 +55,18 @@ public class LivePlayer extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (idInput.getText().length() != 0) {
-                    //Toast.makeText(LivePlayer.this, idInput.getText().toString(), Toast.LENGTH_LONG).show();
                     String roomId = getRoomId(idInput.getText().toString());
+                    //String playurl = getPlayUrls(roomId);
                     String playurl = getMp4PlayUrls(roomId);
 
-                    //openFile(Uri.parse(playurl));
+                    /***********************************************************/
+                    /*cdn*/
+                    CheckBox usecdn = (CheckBox)findViewById(R.id.checkBox);
+                    if(usecdn.isChecked()){
+                        playurl = playurl.replace("http://","http://114.112.202.144/");
+                    }
+                    /***********************************************************/
 
-                    /*
-                    Intent it = new Intent(Intent.ACTION_VIEW);
-                    it.setDataAndType(Uri.parse(playurl),"flv-application/octet-stream");
-                    Toast.makeText(LivePlayer.this, "run activity", Toast.LENGTH_LONG).show();
-                    startActivity(it);
-                    */
                     if(playurl != null) {
                         String extension = MimeTypeMap.getFileExtensionFromUrl(playurl);
                         String mimeType = "video/mp4";
@@ -81,10 +82,6 @@ public class LivePlayer extends AppCompatActivity {
         });
     }
 
-    /**
-     * 打开文件
-     * @param file
-     */
     private void openFile(Uri uri){
 
         Intent intent = new Intent();
