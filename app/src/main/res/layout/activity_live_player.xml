@@ -29,16 +29,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="105dp"
         android:id="@+id/editText"
+        android:text="3"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <CheckBox
-        android:text="Use CDN 114.112.202.144"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBox"
-        android:checked="true"
-        android:layout_marginBottom="22dp"
-        android:layout_above="@+id/button"
-        android:layout_centerHorizontal="true" />
 </RelativeLayout>

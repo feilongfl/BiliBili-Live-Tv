@@ -59,8 +59,8 @@ public class LivePlayer extends AppCompatActivity {
                     String playurl = getPlayUrls(roomId);
                     //String playurl = getMp4PlayUrls(roomId);
 
-                    /***********************************************************/
-                    /*cdn*/
+                    /***********************************************************
+
                     CheckBox usecdn = (CheckBox)findViewById(R.id.checkBox);
                     if(usecdn.isChecked()){
                         playurl = playurl.replace("http://","http://114.112.202.144/");
